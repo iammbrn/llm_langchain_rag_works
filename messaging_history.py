@@ -47,6 +47,15 @@ with_message_history = RunnableWithMessageHistory(chain, get_session_history)
 
 if __name__ == "__main__":
 
+    """messages = [
+        HumanMessage(content = "Hello, my name is Baran."),
+        AIMessage(content = "Hello Baran, how can I help you today?"),
+        HumanMessage(content = "What is my name?")
+    ]
+
+    response = chain.invoke(messages)
+    print(response)"""
+
     while True:
 
         user_input = input(">")
@@ -73,3 +82,5 @@ if __name__ == "__main__":
                 config = config
             ):
                 print(response, end = " ") # Gelen her token’ı anında ekrana bas (stream output)
+
+    
