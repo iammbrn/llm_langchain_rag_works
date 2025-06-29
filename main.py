@@ -13,7 +13,7 @@ load_dotenv()
 # OllamaLLM modeli oluştururuz.
 llm = OllamaLLM(
     model="mistral",          # 'model' parametresi kullanacağımız model ismi.
-    temperature = 0.1,       # 'temperature' parametresi modelin ne kadar dopru sonuçlar vermesini belirler 0' a yaklaşınca dah doğru sonuçlar döndürür.
+    temperature = 0.1,       # 'temperature' parametresi modelin ne kadar doğru sonuçlar vermesini belirler 0' a yaklaşınca daha doğru sonuçlar döndürür.
     base_url=os.getenv("OLLAMA_BASE_URL")) # 'base_url' parametresi Ollama'nın API sunucusuna erişim adresini sağlar.
 
 
@@ -37,7 +37,7 @@ prompt = ChatPromptTemplate.from_messages(
 # Dönen sonucun string kısmını almamızı sağlayacak nesne.
 parser = StrOutputParser() 
 
-# chain, zinciri oluştur, zincirde önce prompt, sonra llm çalışır, daha sonra parser çalışır.  
+# chain, zinciri oluşturma, zincirde önce prompt, sonra llm çalışır, daha sonra parser çalışır.  
 chain = prompt | llm | parser
 
 # API oluşturma.
