@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from langchain_ollama import OllamaLLM
+from langchain_ollama import ChatOllama
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -10,8 +10,8 @@ from langserve import add_routes
 # .env dosyasını okumamnız sağlar.
 load_dotenv()
 
-# OllamaLLM modeli oluştururuz.
-llm = OllamaLLM(
+# ChatOllama modeli oluştururuz.
+llm = ChatOllama(
     model="mistral",          # 'model' parametresi kullanacağımız model ismi.
     temperature = 0.1,       # 'temperature' parametresi modelin ne kadar doğru sonuçlar vermesini belirler 0' a yaklaşınca daha doğru sonuçlar döndürür.
     base_url=os.getenv("OLLAMA_BASE_URL")) # 'base_url' parametresi Ollama'nın API sunucusuna erişim adresini sağlar.
