@@ -9,7 +9,7 @@ from langchain_ollama import ChatOllama, OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
-"""
+""" RAG intro app will created:
 **** ToDo - List ****
 
 1-) Retrieve data from the web source.

@@ -41,7 +41,7 @@ documents = [
 # Belgeler embedding (vektörel gösterim) ile vektör veritabanına dönüştürülüyor
 vector_store = Chroma.from_documents(
     documents = documents,
-    embedding = OllamaEmbeddings(model = "mistral")
+    embedding = OllamaEmbeddings(model = "nomic-embed-text")
 )
 
 
@@ -56,8 +56,8 @@ vector_store = Chroma.from_documents(
     #print(vector_store.similarity_search_with_score("dog"))
 
     # Vektor olarak arama
-    #embedding = OllamaEmbeddings(model = "mistral").embed_query("Parrots are intelligent birds")
-    embedding = OllamaEmbeddings(model = "mistral")
+    #embedding = OllamaEmbeddings(model = "nomic-embed-text").embed_query("Parrots are intelligent birds")
+    embedding = OllamaEmbeddings(model = "nomic-embed-text")
     vector = embedding.embed_query("Parrots are intelligent birds")
     print(vector_store.similarity_search_by_vector(vector))
 
